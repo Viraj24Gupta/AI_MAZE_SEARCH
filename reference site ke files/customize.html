@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>SAILOR Tutorial: Graph Search Algorithms</title>
+    <link rel="stylesheet" type="text/css" href="css/cardinal_base.min.css">
+    <link rel="stylesheet" type="text/css" href="css/tutorial.css">
+    <meta charset="utf-8">
+</head>
+
+<body>
+
+<div class="main">
+<!--=== Header ===-->
+<div id="header" class="clearfix" role="banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="signature">
+                    <div id="site-name">
+                        SAILORS Tutorial: Graph Search Algorithms
+                    </div>
+                    <div id="site-slogan">
+                        This tutorial features content largely taken from Amit Patel's
+                        <a href="http://www.redblobgames.com/pathfinding/a-star/introduction.html">Introduction to A*</a>.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--=== Main page ===-->
+<!--
+<h2>Shortest path problem</h2>
+<b>Given</b>: A map, a "Start" <span id="blob1"></span> and "Target" <span id="cross1"></span>.
+<br/>
+<b>Goal</b>: Find shortest path (or path of minimum cost) from "Start" to "Target".
+
+<hr>
+-->
+
+<h2>Instructions</h2>
+<b>Click</b> on the map to cycle through floor <div class="square floor"></div> (1), grass <div class="square grass"></div> (2), sand <div class="square sand"></div>(3), water <div class="square water"></div>(20), and walls/trees <div class="square tree"></div>.
+<br/>
+<b>Ctrl-click</b> on the map and drag to copy the terran of the selected tile to other tile.
+<br/>
+<b>Drag and drag</b> to move the "Start" <span id="blob"></span> and "Target" <span id="cross"></span> to see the shortest path.
+
+<!-- <div>
+    <table style="float:right">
+        <tr><td>Terrain</td><td></td><td>Cost</td></tr>
+        <tr><td align="right">floor </td><td><div class="square floor"></div> </td><td>1</td></tr>
+        <tr><td align="right">grass </td><td><div class="square grass"></div> </td><td>2</td></tr>
+        <tr><td align="right">sand </td><td><div class="square sand"></div> </td><td>3</td></tr>
+        <tr><td align="right">water </td><td><div class="square water"></div> </td><td>20</td></tr>
+        <tr><td align="right">tree </td><td><div class="square tree"></div> </td><td>Infinity</td></tr>
+    </table>
+
+<div style="text-align:center" class="diagram_custom">
+    <div id="diagram_custom_0"></div>
+    <div id="diagram_custom_loadsave"></div>
+</div>
+</div> -->
+
+<br/>
+See the different search algorithms in action by selecting two algorithms and starting the animation.
+<br/>
+
+<table>
+<tr>
+<td>
+<div style="text-align:center" id="diagram_custom_1" class="diagram_custom">
+  <div id="diagram_custom_1a" class="color-frontier" style="display:inline-block;margin-right:28px"><div id="diagram_custom_1a_alg"></div><br></div>
+  <div id="diagram_custom_1b" class="color-frontier" style="display:inline-block"><div id="diagram_custom_1b_alg"></div><br></div>
+</div>
+</td>
+<td>
+    <div id="diagram_custom_1_layers" style="text-align:center" >Overlay Options</div>
+</td>
+</tr>
+</table>
+
+</div>
+
+<script src="js/require.js"></script>
+<script>
+    // Application entry point
+    require(['require-config'], function(){
+        require(['customize'], function() {
+            d3.selectAll("pre").each(function () {
+                var pre = d3.select(this);
+                pre.html(highlight_words(pre.html(), ['frontier', 'start', 'current', 'visited', 'came_from', 'next', 'goal', 'path', 'cost_so_far', 'new_cost']));
+            });
+
+            var blob = makeBlob("#blob");
+            var cross = makeCross("#cross");
+            var blob1 = makeBlob("#blob1");
+            var cross1 = makeCross("#cross1");
+        });
+    });
+</script>
+</body>
+</html>
