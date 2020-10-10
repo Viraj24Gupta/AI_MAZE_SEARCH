@@ -1,0 +1,44 @@
+h2{
+    font-family: "Arial Rounded MT Bold",sans-serif!important;
+    color: black;
+}
+body{
+    text-align: center;
+    color: black;
+    padding-left: 180px;
+}
+h5{
+    font-family: "Century Gothic", sans-serif!important;
+    color: black;
+}
+h4{
+    font-family: "Century Gothic", sans-serif!important;
+    color: black;
+}
+li{}
+
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 180px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background: darkseagreen;
+
+    padding-top: 20px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 5px 5px 5px 15px;
+    text-decoration:none;
+    font-family: "Century Gothic",sans-serif!important;
+    font-size: 19px;
+    color: black;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: white;
+}
