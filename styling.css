@@ -1,17 +1,20 @@
 h2{
+    text-align: center;
     font-family: "Arial Rounded MT Bold",sans-serif!important;
     color: black;
 }
 body{
-    text-align: center;
-    color: black;
+    text-align-all: center!important;
+    font-family: "Century Gothic";
     padding-left: 150px;
 }
 h5{
+    text-align: center;
     font-family: "Century Gothic", sans-serif!important;
     color: black;
 }
 h4{
+    text-align: center;
     font-family: "Century Gothic", sans-serif!important;
     color: black;
 }
@@ -34,7 +37,7 @@ h4{
     display: block;
 }
 
-.sidenav a:hover {
+.sidenav a:hover{
     color: white;
     display:block;
 }
@@ -43,15 +46,14 @@ h4{
     background-color: darkseagreen;
     color: white;
     padding: 10px;
-    border:none;
+    border: black;
 }
 .dropdown {
     position: relative;
     display: inline-grid;
 }
 .dropdown-content {
-    display: none;
-    background-color: aliceblue;
+    background-color: white;
 }
 .dropdown-content a {
     color: black;
@@ -60,3 +62,10 @@ h4{
 }
 .dropdown-content a:hover {background-color: darkgray}
 .dropdown:hover .dropdown-content {display: block;}
+
+.but{
+    background-color: darkseagreen!important;
+    color: white!important;
+    padding: 6px!important;
+    margin-left: 80px;
+}
