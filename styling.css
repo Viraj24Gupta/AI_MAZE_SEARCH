@@ -1,12 +1,12 @@
 h2{
     text-align: center;
-    font-family: "Arial Rounded MT Bold",sans-serif!important;
+    font-family: "Century Gothic",sans-serif!important;
     color: black;
 }
 body{
     text-align-all: center!important;
-    font-family: "Century Gothic";
-    padding-left: 150px;
+    font-family: "Century Gothic", sans-serif!important;
+    padding-left: 200px;
 }
 h5{
     text-align: center;
@@ -21,7 +21,7 @@ h4{
 
 .sidenav {
     height: 100%;
-    width: 150px;
+    width: 200px;
     position: fixed;
     top: 0;
     left: 0;
@@ -44,7 +44,7 @@ h4{
 
 .drop {
     background-color: darkseagreen;
-    color: white;
+    color: black;
     padding: 10px;
     border: black;
 }
@@ -65,7 +65,7 @@ h4{
 
 .but{
     background-color: darkseagreen!important;
-    color: white!important;
+    color: black!important;
     padding: 6px!important;
     margin-left: 80px;
 }
