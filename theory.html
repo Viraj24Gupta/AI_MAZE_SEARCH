@@ -6,51 +6,97 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    <!--
-		 ____                   __     ___            ___       ____     _____        ___
-		|  _ \         (_) | | | |     | |            \  \      /  /    ||    \\     / _ \
-		| |_) | _   _   _  | | | |_    | |__   _   _   \  \    /  / (_) ||____//    / / \ \        (_)
-		|  _ < | | | | | | | | | __|   | '_ \ | | | |   \  \  /  /  | | || \\      / /___\ \       | |
-		| |_)| | |_| | | | | | | |_    | |_)| | |_| |    \  \/  /   | | ||  \\    / /     \ \      | |
-		|____/  \__,_| |_| |_| \___|   |_.__/  \__, |     \____/    |_| ||   \\  /_/       \_\ _   | |
-		                                        __/ |                                         | |__| |
-		                                       |___/                                          |______|     -->
+    <script src="https://kit.fontawesome.com/39c8bc8c71.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="sidenav" style="text-align: center">
-        <a href="home.html">Home</a>
-        <a href="theory.html">Theoretical Background</a>
-        <a href="algorithms.html">Algorithms</a>
-        <a href="implementation.html">Implementation</a>
-        <a href="contributors.html">Contributors</a>
+<div id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="theory.html">Theoretical Background</a></li>
+            <li><a href="algorithms.html">Algorithms</a></li>
+            <li><a href="implementation.html">Implementation</a></li>
+            <li><a href="contributors.html">Contributors</a></li>
+        </ul>
     </div>
-    <div class="container">
-        <div class="card-deck">
-            <div class="card text-center" >
-                <div class="card-header"><h4>UNINFORMED SEARCH ALGORITHMS</h4></div>
-                <div class="card-body"><h5>1.BFS<BR>2.DFS<BR>3.DIJKSTRA'S</h5></div>
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <a href="#" class="btn" id="menu-toggle"><i class="fas fa-align-justify"></i></a>
+            <div class="jumbotron">
+                <p><h2><b><u>INFORMED SEARCH ALGORITHMS</u></b></h2>
             </div>
-            <div class="card text-center" >
-                <div class="card-header"><h4>INFORMED SEARCH ALGORITHMS</h4></div>
-                <div class="card-body"><h5>1.A*<BR>2.IDDFS<BR>3.IDA*</h5></div>
+            <div class="container" style="text-align: center" >
+
+                <p><h5><b>1.A* SEARCH:</b>A* is a graph traversal and path search algorithm, which is often used in many fields of computer science due to its completeness, optimality, and optimal efficiency. One major practical drawback is its space complexity, as it stores all generated nodes in memory.</h5>
+                <div id="astar">
+                    <button class="btn  but" data-toggle="collapse" data-target="#aalgo"><i class="icon-chevron-right"></i>ALGORITHM</button>
+                    <button class="btn  but" data-toggle="collapse" data-target="#apseudo"><i class="icon-chevron-right"></i>PSEUDOCODE</button>
+                    <div class="accordion-group">
+                        <div class="collapse text-left" id="aalgo"  data-parent="#astar">
+                            <p>
+                            1.  Initialize the open list<br>
+                            2.  Initialize the closed list put the starting node on the open list (you can leave its f at zero)<br>
+                            3.  while the open list is not empty<br>
+                            a) find the node with the least f on the open list, call it "q"<br>
+                            b) pop q off the open list<br>
+                            c) generate q's 8 successors and set their parents to q<br>
+                            d) for each successor<br>
+                            i) if successor is the goal, stop search successor.g = q.g + distance between successor and q successor.h = distance from goal to successor (This can be done using many ways, we will discuss three heuristics- Manhattan, Diagonal and Euclidean Heuristics) successor.f = successor.g + successor.h<br>
+                            ii) if a node with the same position as successor is in the OPEN list which has a lower f than successor, skip this successor<br>
+                            iii) if a node with the same position as successor  is in the CLOSED list which has a lower f than successor, skip this successor otherwise, add  the node to the open list end (for loop)<br>
+                            e) push q on the closed list end (while loop)
+                            </p>
+                        </div>
+                        <div class="collapse text-left" id="apseudo"  data-parent="#astar">
+                            <p>
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <p><h5><b>2.IDDFS:</b>In computer science, iterative deepening search or more specifically iterative deepening depth-first search is a state space/graph search strategy in which a depth-limited version of depth-first search is run repeatedly with increasing depth limits until the goal is found.</h5>
+                <div id="iddfs">
+                    <button class="btn  but" data-toggle="collapse" data-target="#iddfsalgo"><i class="icon-chevron-right"></i>ALGORITHM</button>
+                    <button class="btn  but" data-toggle="collapse" data-target="#iddfspseudo"><i class="icon-chevron-right"></i>PSEUDOCODE</button>
+                    <div class="accordion-group">
+                        <div class="collapse text-left" id="iddfsalgo"  data-parent="#iddfs">
+                            <p>
+
+                            </p>
+                        </div>
+                        <div class="collapse text-left" id="iddfspseudo"  data-parent="#iddfs">
+                            <p>
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <P><H5><B>3.IDA* SEARCH:</B>Iterative deepening A* is a graph traversal and path search algorithm that can find the shortest path between a designated start node and any member of a set of goal nodes in a weighted graph.</H5>
+                <div id="idastar">
+                    <button class="btn  but" data-toggle="collapse" data-target="#idaalgo"><i class="icon-chevron-right"></i>ALGORITHM</button>
+                    <button class="btn  but" data-toggle="collapse" data-target="#idapseudo"><i class="icon-chevron-right"></i>PSEUDOCODE</button>
+                    <div class="accordion-group">
+                        <div class="collapse text-left" id="idaalgo"  data-parent="#idastar">
+                            <p>
+
+                            </p>
+                        </div>
+                        <div class="collapse text-left" id="idapseudo"  data-parent="#idastar">
+                            <p>
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="container" style="text-align: center" >
-        <br/><p><h4><B><U>UNINFORMED SEARCH ALGORITHMS</U></B></h4></p>
-        <p><h5><B>1.BFS:</B>Breadth-first search is an algorithm for traversing or searching tree or graph data structures. It starts at the tree root, and explores all of the neighbor nodes at the present depth prior to moving on to the nodes at the next depth level.</h5></p>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Animated_BFS.gif" width=25% height=25% alt="BFS.gif">
-        <p><h5><b>2.DFS:</b>Depth-first search is an algorithm for traversing or searching tree or graph data structures. The algorithm starts at the root node and explores as far as possible along each branch before backtracking.</h5></p>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Depth-First-Search.gif" width=25% height=25% alt="DFS.gif">
-        <p><h5><b>3.DIJKSTRA'S:</b>Dijkstra's algorithm is an algorithm for finding the shortest paths between nodes in a graph, which may represent, for example, road networks. It was conceived by computer scientist Edsger W. Dijkstra in 1956 and published three years later. The algorithm exists in many variants.</h5></p>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Dijkstra_Animation.gif" width=25% height=25% alt="DIJKSTRA'A.gif">
-        <p><h4><b><u>INFORMED SEARCH ALGORITHMS</u></b></h4></p>
-        <p><h5><b>1.A* SEARCH:</b>A* is a graph traversal and path search algorithm, which is often used in many fields of computer science due to its completeness, optimality, and optimal efficiency. One major practical drawback is its space complexity, as it stores all generated nodes in memory.</h5></p>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/AstarExampleEn.gif" width=40% height=40% alt="ASTAR.gif">
-        <p><h5><b>2.IDDFS:</b>In computer science, iterative deepening search or more specifically iterative deepening depth-first search is a state space/graph search strategy in which a depth-limited version of depth-first search is run repeatedly with increasing depth limits until the goal is found.</h5></p>
-        <img src="http://teleported.in/post_imgs/03_ids_graph_search.gif" width=75% height=75% alt="IDDFS.gif">
-        <P><H5><B>3.IDA* SEARCH:</B>Iterative deepening A* is a graph traversal and path search algorithm that can find the shortest path between a designated start node and any member of a set of goal nodes in a weighted graph.</H5></P>
-        <img src="https://algorithmsinsight.files.wordpress.com/2016/03/ida-star.gif" width=75% height=75% alt="IDASTAR.gif">
-    </div>
+</div>
+<script type="text/javascript" src="jsfe.js"></script>
 </body>
 </html>

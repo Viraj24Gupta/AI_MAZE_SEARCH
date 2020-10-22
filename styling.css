@@ -1,46 +1,61 @@
-
-h2{
-    text-align: center;
-    font-family: "Century Gothic",sans-serif!important;
-    color: black;
-}
-body{
-    text-align-all: center!important;
-    font-family: "Century Gothic", sans-serif!important;
-    padding-left: 200px;
-}
-h5{
-    text-align: center;
-    font-family: "Century Gothic", sans-serif!important;
-    color: black;
-}
-h4{
-    text-align: center;
-    font-family: "Century Gothic", sans-serif!important;
-    color: black;
-}
-.sidenav {
-    height: 100%;
-    width: 200px;
+/* Sidebar */
+#sidebar-wrapper{
+    z-index:1;
     position: fixed;
-    top: 0;
-    left: 0;
-    background: darkseagreen;
-    padding-top: 20px;
+    width:0;
+    height:100%;
+    overflow-y:hidden;
+    background:linear-gradient(to right,#acb6e5, #86fde8);
+    opacity:2.0;
+    transition:all .3s;
+    display:flex;
+    align-items:center;
 }
-.sidenav a {
-    padding: 20px;
-    font-family: "Century Gothic",sans-serif!important;
-    font-size: 20px;
-    color: black;
-    display: block;
+/* Main Content */
+#page-content-wrapper{
+    width: 100%;
+    position: absolute;
+    padding:15px;
+    transition:all .3s;
 }
-.sidenav a:hover{
-    color: white;
+#menu-toggle{
+    transition:all .3s;
+    font-size:20px;
+    position: fixed!important;
+}
+/* Change the width of the sidebar to display it*/
+#wrapper.menuDisplayed #sidebar-wrapper{
+    width:250px;
+}
+#wrapper.menuDisplayed #page-content-wrapper{
+    padding-left:250px;
+}
+/* Sidebar styling */
+.sidebar-nav{
+    padding:0;
+    list-style:none;
+    transition:all .3s;
+    width:100%;
+    text-align:center;
+    font-size: larger;
+}
+.sidebar-nav li{
+    line-height:40px;
+    width:100%;
+    transition:all .3s;
+    padding:10px;
+}
+.sidebar-nav li a {
     display:block;
+    text-decoration:none;
+    color: black;
 }
+.sidebar-nav li:hover{
+    background: darkslategrey;
+}
+/*dropdown*/
 .drop {
-    background-color: darkseagreen;
+    background-color: #b3d4fc;
     color: black;
     padding: 10px;
     border: black;
@@ -53,11 +68,49 @@ h4{
     padding: 10px 10px;
     display: block;
 }
-.dropdown-content a:hover {background-color: darkseagreen}
-.dropdown:hover .dropdown-content {display: block}
+.dropdown-content a:hover {
+    background-color: #b3d4fc
+}
+.dropdown:hover .dropdown-content {
+    display: block
+}
+/*submit on algorithm*/
 .but{
-    background-color: darkseagreen !important;
+    background-color: #b3d4fc !important;
     color: black!important;
     padding: 6px!important;
     margin-left: 80px;
+}
+.cc{
+    background-color: azure!important;
+}
+.collapse.in {
+    min-height: 50px;
+    border: 0px;
+}
+.jumbotron{
+    background:linear-gradient(to right,#acb6e5, #86fde8);
+}
+h2{
+    text-align: center;
+    font-family: "Century Gothic",sans-serif!important;
+    color: black;
+}
+body{
+    text-align-all: center!important;
+    font-family: "Century Gothic", sans-serif!important;
+    background: azure!important;
+}
+h5{
+    text-align: center;
+    font-family: "Century Gothic", sans-serif!important;
+    color: black;
+}
+h4{
+    text-align: center;
+    font-family: "Century Gothic", sans-serif!important;
+    color: black;
+}
+img{
+    text-align: right;
 }
