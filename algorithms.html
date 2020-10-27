@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" href="styling.css">
@@ -9,7 +10,6 @@
     <script src="https://kit.fontawesome.com/39c8bc8c71.js" crossorigin="anonymous"></script>
 
 </head>
-
 <body>
 <div id="wrapper">
     <!-- Sidebar -->
@@ -28,47 +28,28 @@
         <div class="container-fluid">
             <a href="#" class="btn" id="menu-toggle"><i class="fas fa-align-justify"></i></a>
             <div class="container jumbotron">
-                <h2><p><b><u>BASIC IMPLEMENTATION</u></b></p></h2>
+                <h2><p><b><u>EXCLUSIVE IDA STAR IMPLEMENTATION</u></b></p></h2>
             </div>
-            <div class="container" style="text-align:center;padding-top: 30px">
-                <form>
-                    <div class="form-inline dropdown">
-                        <h4><label>Select the search algorithm :</label></h4>
-                        <button class="btn but" type="button" id="dropdownMenuButton0" data-toggle="dropdown">--SELECT--</button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton0" style=" text-align: center;padding: 10px">
-                            <div class="dropdown-content">
-                                <a class="dropContent0" href="#">Breadth First Search</a>
-                                <a class="dropContent0" href="#">Depth First Search</a>
-                                <a class="dropContent0" href="#">DIJKSTRA'S</a>
-                                <a class="dropContent0" href="#">A - Star</a>
-                                <a class="dropContent0" href="#">Iterative Deepening Search</a>
-                                <a class="dropContent0" href="#">Iterative Deepening A - Star</a>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-                <form>
-                    <div class="form-inline ">
-                        <br/><br/><br/><br/><h4><label>Enter the initial node of graph:</label></h4>
-                        <div class="col-sm-2">
-                            <label for="node1"></label><input type="text" id="node1" class="form-control" placeholder="--VALUE--">
-                        </div>
-                    </div>
-                </form>
-                <form>
-                    <div class="form-inline ">
-                        <br/><br/><h4><label>Enter the final node of graph:</label></h4>&nbsp&nbsp&nbsp
-                        <div class="col-sm-2">
-                            <label for="node2"></label><input type="text" id="node2" class="form-control" placeholder="--VALUE--">
-                        </div>
-                        <button  type="submit" class="btn but">Submit</button>
-                    </div>
-                </form>
-            </div>
+
+            <form action="process.php" method="post">
+                Input Maze:<br>
+                <textarea name="input_matrix" rows="21" cols="50"></textarea><br>
+                Sx: <input type="text" name="s1"><br>
+                Sy: <input type="text" name="s2"><br>
+                Dx: <input type="text" name="d1"><br>
+                Dy: <input type="text" name="d2"><br>
+
+                <label for="algo">Algorithm:</label>
+                <select name="algo" id="algo">
+                    <option value="a_star">A Star</option>
+                    <option value="ida_star">IDA Star</option>
+                </select>
+                <input type="submit" name = "execute" value = "execute">
+            </form>
+
         </div>
     </div>
 </div>
 <script type="text/javascript" src="jsfe.js"></script>
 </body>
-
 </html>

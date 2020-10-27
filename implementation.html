@@ -7,7 +7,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/39c8bc8c71.js" crossorigin="anonymous"></script>
-
 </head>
 <body>
 <div id="wrapper">
@@ -27,10 +26,69 @@
         <div class="container-fluid">
             <a href="#" class="btn" id="menu-toggle"><i class="fas fa-align-justify"></i></a>
             <div class="container jumbotron">
-                <h2><p><b><u>EXCLUSIVE IDA STAR IMPLEMENTATION</u></b></p></h2>
+                <h2><b><u>IMPLEMENTATION OF SEARCH ALGORITHMS</u></b></h2>
             </div>
-            
-            //idhar
+
+			<div class="container">
+                <form action="process.php" method="post">
+                    <div class="form-inline dropdown">
+                        <h4><label>Select the search algorithm :</label></h4>
+                        <button class="btn but" type="button" id="dropdownMenuButton0" data-toggle="dropdown" style="margin-bottom: 20px">--SELECT--</button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton0" style=" text-align: center;padding: 10px">
+                            <div class="dropdown-content">
+                                <a class="dropContent0" id="a_star">A - Star</a>
+                                <a class="dropContent0" id="ida_star">Iterative Deepening A - Star</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form" style="display: flex">
+                        <h4><label for="maze" >Enter the maze in form of 1's and 0's:</label></h4>
+                        <textarea class="form-control" id="maze"
+                                  style="background-color: azure; margin-bottom: 10px;margin-left: 10px" placeholder="--VALUE--"></textarea>
+                    </div>
+                    <div style="display: flex">
+                        <div class="form-inline ">
+                            <h4><label>Enter the Starting "x" value :</label></h4>
+                            <div class="col-sm-2">
+                                <label for="s1"></label><input type="text" id="s1" class="form-control"
+                                                               style="margin-bottom: 10px;margin-top:20px;background-color: azure"
+                                                               placeholder="--VALUE--">
+                            </div>
+                        </div>
+                        <div class="form-inline ">
+                            <h4><label>Enter the Final "x" value :</label></h4>
+                            <div class="col-sm-2">
+                                <label for="d1"></label><input type="text" id="d1" class="form-control"
+                                                               style="margin-bottom: 10px;margin-top:20px;margin-left: 36px;background-color: azure "
+                                                               placeholder="--VALUE--">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex">
+
+                        <div class="form-inline ">
+                            <h4><label>Enter the Starting "y" value :</label></h4>
+                            <div class="col-sm-2">
+                                <label for="s2"></label><input type="text" id="s2" class="form-control"
+                                                               style="margin-bottom: 10px;margin-top:20px;background-color: azure"
+                                                               placeholder="--VALUE--">
+                            </div>
+                        </div>
+
+                        <div class="form-inline ">
+                            <h4><label>Enter the Final "y" value :</label></h4>
+                            <div class="col-sm-2">
+                                <label for="d2"></label><input type="text" id="d2" class="form-control"
+                                                               style="margin-bottom: 10px;margin-top:20px;margin-left: 36px;background-color: azure "
+                                                               placeholder="--VALUE--">
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="submit" name = "execute" value = "execute">
+                    <button  type="submit" class="btn but">Submit</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>

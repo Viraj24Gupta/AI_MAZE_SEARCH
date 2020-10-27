@@ -3,9 +3,14 @@
 <link rel="stylesheet" href="styling.css">
 <head>
     <title>theory</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+            crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/39c8bc8c71.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -25,77 +30,147 @@
         <div class="container-fluid">
             <a href="#" class="btn" id="menu-toggle"><i class="fas fa-align-justify"></i></a>
             <div class="container jumbotron">
-                <p><h2><b><u>INFORMED SEARCH ALGORITHMS</u></b></h2>
+                <p>
+                <h2><b><u>THEORETICAL BACKGROUND</u></b></h2>
             </div>
-            <div class="container" style="text-align: center" >
+            <div class="container" style="text-align: center">
 
-                <p><h5><b>1.A* SEARCH:</b><br/>A* is a graph traversal and path search algorithm, which is often used in many fields of computer science due to its completeness, optimality, and optimal efficiency. One major practical drawback is its space complexity, as it stores all generated nodes in memory.</h5>
+                <p><h5><b>A* SEARCH:</b><br/>A* is a graph traversal and path search algorithm, which is often used in
+                many fields of computer science due to its completeness, optimality, and optimal efficiency. One major
+                practical drawback is its space complexity, as it stores all generated nodes in memory.<br/>
+                We take into account both the cost of reaching a node form the Initial state, g(h), as well as the heuristic
+                estimate from that node to the goal node, h(n).<br/>
+                f(n) = g(n) +  h(n)<br/>
+                For given h(n), this is the best estimate of a lowest cost path from the initial state to a goal state that
+                is constrained to pass through node n.
+                </h5>
                 <div id="astar">
-                    <button class="btn  but" data-toggle="collapse" data-target="#aalgo"  style="margin-bottom: 10px">ALGORITHM</button>
-                    <button class="btn  but" data-toggle="collapse" data-target="#apseudo" style="margin-bottom: 10px">PSEUDOCODE</button>
+                    <button class="btn  but" data-toggle="collapse" data-target="#aalgo" style="margin-bottom: 10px">
+                        ALGORITHM
+                    </button>
+                    <button class="btn  but" data-toggle="collapse" data-target="#apseudo" style="margin-bottom: 10px">
+                        PSEUDOCODE
+                    </button>
+                    <button class="btn  but" data-toggle="collapse" data-target="#astc" style="margin-bottom: 10px">
+                        SPACE AND TIME COMPLEXITIES
+                    </button>
+                    <button class="btn  but" data-toggle="collapse" data-target="#aexa" style="margin-bottom: 10px">
+                        EXAMPLE
+                    </button>
                     <div class="accordion-group">
-                        <div class="collapse text-left" id="aalgo"  data-parent="#astar">
+                        <div class="collapse text-left" id="aalgo" data-parent="#astar">
                             <p>
-                            1.  Initialize the open list<br>
-                            2.  Initialize the closed list put the starting node on the open list (you can leave its f at zero)<br>
-                            3.  while the open list is not empty<br>
-                            a) find the node with the least f on the open list, call it "q"<br>
-                            b) pop q off the open list<br>
-                            c) generate q's 8 successors and set their parents to q<br>
-                            d) for each successor<br>
-                            i) if successor is the goal, stop search successor.g = q.g + distance between successor and q successor.h = distance from goal to successor (This can be done using many ways, we will discuss three heuristics- Manhattan, Diagonal and Euclidean Heuristics) successor.f = successor.g + successor.h<br>
-                            ii) if a node with the same position as successor is in the OPEN list which has a lower f than successor, skip this successor<br>
-                            iii) if a node with the same position as successor  is in the CLOSED list which has a lower f than successor, skip this successor otherwise, add  the node to the open list end (for loop)<br>
-                            e) push q on the closed list end (while loop)
+                                1. Initialize the open list<br>
+                                2. Initialize the closed list put the starting node on the open list (you can leave its
+                                f at zero)<br>
+                                3. while the open list is not empty<br>
+                                a) find the node with the least f on the open list, call it "q"<br>
+                                b) pop q off the open list<br>
+                                c) generate q's 8 successors and set their parents to q<br>
+                                d) for each successor<br>
+                                i) if successor is the goal, stop search successor.g = q.g + distance between successor
+                                and q successor.h = distance from goal to successor (This can be done using many ways,
+                                we will discuss three heuristics- Manhattan, Diagonal and Euclidean Heuristics)
+                                successor.f = successor.g + successor.h<br>
+                                ii) if a node with the same position as successor is in the OPEN list which has a lower
+                                f than successor, skip this successor<br>
+                                iii) if a node with the same position as successor is in the CLOSED list which has a
+                                lower f than successor, skip this successor otherwise, add the node to the open list end
+                                (for loop)<br>
+                                e) push q on the closed list end (while loop)
                             </p>
                         </div>
-                        <div class="collapse" id="apseudo"  data-parent="#astar">
+                        <div class="collapse" id="apseudo" data-parent="#astar">
                             <p>
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/AstarExampleEn.gif" width=40% height=40% alt="ASTAR.gif">
+                                <img src="astar%20pseudocode%20.jpg" width=80% height=80% alt="astar_pseodocode.jpg">
+                            </p>
+                        </div>
+                        <div class="collapse" id="astc" data-parent="#astar">
+                            <p>
+                                <h4>TIME COMPLEXITY</h4>
+                                The time complexity of A* depends on the heuristic. In the worst case of an unbounded search
+                                space, the number of nodes expanded is exponential in the depth of the solution (the shortest path)
+                                d: O(bd), where b is the branching factor (the average number of successors per state).
+                                This assumes that a goal state exists at all, and is reachable from the start state; if it is not,
+                                and the state space is infinite, the algorithm will not terminate.
+                                <h4>SPACE COMPLEXITY</h4>
+                                The space complexity of A* is roughly the same as that of all other graph search algorithms,
+                                as it keeps all generated nodes in memory.
+                            </p>
+                        </div>
+                        <div class="collapse" id="aexa" data-parent="#astar">
+                            <p>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/AstarExampleEn.gif"
+                                     width=40% height=40% alt="ASTAR.gif">
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <p><h5><b>2.IDDFS:</b><br/>Iterative deepening search or more specifically iterative deepening depth-first search is a state space/graph search strategy in which a depth-limited version of depth-first search is run repeatedly with increasing depth limits until the goal is found.</h5>
-                <div id="iddfs">
-                    <button class="btn  but" data-toggle="collapse" data-target="#iddfsalgo"  style="margin-bottom: 10px">ALGORITHM</button>
-                    <button class="btn  but" data-toggle="collapse" data-target="#iddfspseudo"  style="margin-bottom: 10px">PSEUDOCODE</button>
-                    <div class="accordion-group">
-                        <div class="collapse text-left" id="iddfsalgo"  data-parent="#iddfs">
-                            <p>
-
-                            </p>
-                        </div>
-                        <div class="collapse" id="iddfspseudo"  data-parent="#iddfs">
-                            <p>
-                                <img src="http://teleported.in/post_imgs/03_ids_graph_search.gif" width=75% height=75% alt="IDDFS.gif">
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <P><H5><B>3.IDA* SEARCH:</B><br/>Iterative deepening A* is a graph traversal and path search algorithm that can find the shortest path between a designated start node and any member of a set of goal nodes in a weighted graph.</H5>
+                <P><H5><B>IDA* SEARCH:</B><br/>Iterative deepening A* is a graph traversal and path search algorithm
+                that can find the shortest path between a designated start node and any member of a set of goal nodes in
+                a weighted graph.<br/>Iterative-deepening-A* works as follows: at each iteration, perform a depth-first
+                search, cutting off a branch when its total cost exceeds a given threshold. This threshold starts at the
+                estimate of the cost at the initial state, and increases for each iteration of the algorithm. At each iteration,
+                the threshold used for the next iteration is the minimum cost of all values that exceeded the current threshold.
+                <br/>Like A*, IDA* is guaranteed to find the shortest path leading from the given start
+                node to any goal node in the problem graph, if the heuristic function h is admissible i.e. h(n) <= h*(n),
+                for all nodes n, where h* is the true cost of the shortest path from n to the nearest goal (the "perfect heuristic").
+                <br/>IDA* is beneficial when the problem is memory constrained. A* search keeps a large queue of unexplored
+                nodes that can quickly fill up memory. By contrast, because IDA* does not remember any node except the ones
+                on the current path, it requires an amount of memory that is only linear in the length of the solution that it constructs.
+                </H5>
                 <div id="idastar">
-                    <button class="btn  but" data-toggle="collapse" data-target="#idaalgo"  style="margin-bottom: 10px">ALGORITHM</button>
-                    <button class="btn  but" data-toggle="collapse" data-target="#idapseudo"  style="margin-bottom: 10px">PSEUDOCODE</button>
+                    <button class="btn  but" data-toggle="collapse" data-target="#idaalgo" style="margin-bottom: 10px">
+                        ALGORITHM
+                    </button>
+                    <button class="btn  but" data-toggle="collapse" data-target="#idapseudo" style="margin-bottom: 10px">
+                        PSEUDOCODE
+                    </button>
+                    <button class="btn  but" data-toggle="collapse" data-target="#idastc" style="margin-bottom: 10px">
+                        SPACE AND TIME COMPLEXITIES
+                    </button>
+                    <button class="btn  but" data-toggle="collapse" data-target="#idaexa"
+                            style="margin-bottom: 10px">EXAMPLE
+                    </button>
                     <div class="accordion-group">
-                        <div class="collapse text-left" id="idaalgo"  data-parent="#idastar">
+                        <div class="collapse text-left" id="idaalgo" data-parent="#idastar">
                             <p>
-
+                                1.If  a goal node is reached with a price lower then the threshold it is returned.<br/>
+                                2.Else if a whole iteration has ended without reaching the goal, then another iteration
+                                is begun with a greater cost threshold.<br/>
+                                3.The new cost threshold is set to the minimum cost of al nodes that were pruned on the
+                                previous iteration.<br/>
+                                4.The cost Threshold for the first Iteration is set to the cost of the initial state.<br/>
                             </p>
                         </div>
-                        <div class="collapse" id="idapseudo"  data-parent="#idastar">
+                        <div class="collapse" id="idapseudo" data-parent="#idastar">
                             <p>
-                                <img src="https://algorithmsinsight.files.wordpress.com/2016/03/ida-star.gif" width=75% height=75% alt="IDASTAR.gif">
+                                <img src="ida%20pseodocode.jpg" width=80% height=80% alt="ida_pseodocode.jpg">
+                            </p>
+                        </div>
+                        <div class="collapse" id="idastc" data-parent="#idastar">
+                            <p>
+                            <h4>TIME COMPLEXITY</h4>
+                            The worst case of the IDA* is that every node has a different
+                            function-cost in this case if A* examine k node to solve a problem,
+                            IDA* examines 1+2+3+...+k (O(K^2)) nodes
+                            <h4>SPACE COMPLEXITY</h4>
+                            IDA* (memory-bounded) algorithm does not keep any
+                            previously explored path (the same as A*). It needs to re-expand
+                            path if it is necessary and this will be a costly operation.<br/>
+                            Although it's worst case space complexity is O(d).
+                            </p>
+                        </div>
+                        <div class="collapse" id="idaexa" data-parent="#idastar">
+                            <p>
+                                <img src="https://algorithmsinsight.files.wordpress.com/2016/03/ida-star.gif" width=75%
+                                     height=75% alt="IDASTAR.gif">
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
 </div>
