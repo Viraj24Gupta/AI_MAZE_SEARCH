@@ -15,8 +15,7 @@
         <ul class="sidebar-nav">
             <li><a href="home.html">Home</a></li>
             <li><a href="theory.html">Theoretical Background</a></li>
-            <li><a href="algorithms.html">Algorithms</a></li>
-            <li><a href="implementation.html">Implementation</a></li>
+            <li><a href="implementation.php">Implementation</a></li>
             <li><a href="contributors.html">Contributors</a></li>
         </ul>
     </div>
@@ -26,9 +25,32 @@
         <div class="container-fluid">
             <a href="#" class="btn" id="menu-toggle"><i class="fas fa-align-justify"></i></a>
             <div class="container jumbotron"><p><h2><B><U>IMPLEMENTATION OF GRAPH SEARCH ALGORITHM</U></B></h2></div>
-            <br><br>
-            <P><H5>THIS PROJECT FOCUSES ON IMPLEMENTATION OF VARIOUS GRAPH SEARCH ALGORITHMS AND <BR>COMPARES THEM ON THE BASIS THEIR TIME AND SPACE COMPLEXITY.</H5>
-            <P><H5>THERE ARE MAINLY TWO TYPES OF GRAPH SEARCH ALGORITHMS<BR>1.UNINFORMED SEARCH ALGORITHMS<BR>2.INFORMED SEARCH ALGORITHMS</H5>
+            <P><H5>THIS PROJECT FOCUSES ON IMPLEMENTATION OF TWO GRAPH SEARCH ALGORITHMS AND <BR>COMPARES THEM ON THE
+            BASIS THEIR TIME AND SPACE COMPLEXITY.</H5>
+            <P><H5>THE TWO GRAPH SEARCH ALGORITHMS ARE: <BR>A* SEARCH ALGORITHM<BR>IDA* SEARCH ALGORITHMS</H5>
+        </div>
+        <div class="container">
+            <h4><b><u>OVERVIEW</u></b></h4>
+            <p><h5>A* and IDA* search are a set of state space searching algorithms that find an optimal path from a beginning
+            state to a known destination state. They can be used to solve a variety of problems from solving a puzzle
+            with the least amount of steps to find the quickest path through a maze.</h5>
+            <p><h5>Both these algorithms are similar in nature in that they try to intelligently select the order of the
+            paths they explore. They both do this by using a heuristic function that scores how close (in terms of steps
+            to reach the goal node) a node is to the goal node. The general idea is that we want to explore paths that lead
+            to nodes that are more similar to the goal node and have a short path from and starting node. To achieve this both
+            algorithms use a f value to score nodes and the f value is the sum of the nodes heuristic value and the length of
+            the path to get this node. We explore nodes with a smaller f value before looking at ones with a larger f value.
+            This pushes us to nodes that are getting more similar to the goal node while also having a shorter path.<br/><br/>
+            An important characteristic of the heuristic function is that it must be admissible. A heuristic function is
+            admissible if it underestimates or calculates the exact number of steps to reach the goal node. If the heuristic
+            function is not admissible we cannot guarantee the optimal path will be found.<br/><br/>
+            The main difference about these two algorithms is the process in which they explore the search space. In A* a
+            priority queue is used to keep track of all possible children nodes queued to be explored. This means there can
+            be a large number of nodes sitting in the queue which can waste a large amount of memory. IDA* on the other hand
+            searches the graph in an iterative fashion exploring the search space at increasing depths per iteration. In each
+            iteration it only stores the current path being explored. This leads to the memory usage being linear to the length
+            of the path being explored. The downside to IDA* is that the same paths will be revisited on each iteration possibly
+            resulting in a longer runtime.</h5>
         </div>
     </div>
 </div>
