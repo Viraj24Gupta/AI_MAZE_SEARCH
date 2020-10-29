@@ -16,7 +16,6 @@
             <li><a href="home.html">Home</a></li>
             <li><a href="theory.html">Theoretical Background</a></li>
             <li><a href="implementation.php">Implementation</a></li>
-            <li><a href="contributors.html">Contributors</a></li>
         </ul>
     </div>
 
