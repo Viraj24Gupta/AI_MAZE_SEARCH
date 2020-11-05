@@ -14,7 +14,7 @@ Finally we have implemented the frontend using HTML, PHP <p> </p>
   and finally run and test the whole project.
    <h1>References</h1>
   We have created the whole project on our own and taken very less reference from the internet.<br/>
-  We have taken the reference from following sites:
+  We have taken the reference from following sites:<br/>
   To calculate time taken by the function: https://www.geeksforgeeks.org/how-to-measure-time-taken-by-a-program-in-c/
   
 
